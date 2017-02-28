@@ -18,7 +18,8 @@ module.exports = {
       /start : untuk memulai bot
       /test : testing bot
       /location <location name> : menentukan lokasi penginapan
-      /murah <location name> : tempat penginapan termurah di suatu daerah`)
+      /murah <location name> : tempat penginapan termurah di suatu daerah
+      /flight <departure> <arrival> : cari tiket pesawat (JKTA KNO)`)
     })
 
     bot.onText(/\/murah (.+)/, (msg, match) => {
@@ -53,6 +54,14 @@ module.exports = {
 
     bot.onText(/\/test/, function (message) {
       bot.sendMessage(message.chat.id, `Test dari ${message.from.first_name} ${message.from.last_name} diterima`)
+    })
+
+    bot.onText(/\/flight (.+)/, (msg, match) => {
+      const chatId = msg.chat.id
+      const resp = match[1].split(' ')
+      console.log(resp)
+      let message = `https://www.traveloka.com/fullsearch?ap=${resp[0]}.${resp[1]}&dt=01-03-2017.NA&ps=1.0.0&sc=ECONOMY`
+      bot.sendMessage(chatId, message)
     })
   }
 }
