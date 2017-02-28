@@ -1,11 +1,12 @@
 const TelegramBot = require('node-telegram-bot-api')
 var airbnb = require('airapi')
+require('dotenv').config()
 
 module.exports = {
   getBot: function (req, res, next) {
     res.send('')
 
-    const token = '371310626:AAEp_-AdV5Pq48DezczSxzNU_D0faU-Vf3g'
+    const token = process.env.TELEGRAM_TOKEN
     const bot = new TelegramBot(token, {polling: true})
 
     bot.onText(/\/start/, function (message) {
