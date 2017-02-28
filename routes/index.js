@@ -12,8 +12,10 @@ function getImdb(name, callback) {
     })
 }
 
-router.post('/', function (req, res) {
-    res.send(req.body.name)
+router.get('/', function (req, res, next) {
+    res.render('index', {
+        title: 'Express'
+    });
 });
 
 router.get('/search/:parameter', function (req, res, next) {
@@ -26,17 +28,41 @@ router.get('/search/:parameter', function (req, res, next) {
         //youtube
         search(`${req.params.parameter} trailer`, opts, function (err, results) {
             if (err) {
-                res.render("index", {
+                res.render("search", {
                     movie: '',
                     youtube: ''
                 })
             }
-            res.render("index", {
+            res.render("search", {
                 movie: data,
                 youtube: results
             })
         });
     })
 });
+
+router.post('/search', function (req, res, next) {
+    let opts = {
+        maxResults: 5,
+        key: 'AIzaSyB4yXjTrzbJgirwI6HIXrd4eYiNYDoT28A'
+    };
+
+    let output = getImdb(req.body.name, function (data) {
+        //youtube
+        search(`${req.body.name} trailer`, opts, function (err, results) {
+            if (err) {
+                res.render("search", {
+                    movie: '',
+                    youtube: ''
+                })
+            }
+            res.render("search", {
+                movie: data,
+                youtube: results
+            })
+        });
+    })
+});
+
 
 module.exports = router;
