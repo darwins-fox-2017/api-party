@@ -4,7 +4,7 @@ require('dotenv').config()
 
 module.exports = {
   getBot: function (req, res, next) {
-    res.send('')
+    res.send('Running Telegram Bot')
 
     const token = process.env.TELEGRAM_TOKEN
     const bot = new TelegramBot(token, {polling: true})
