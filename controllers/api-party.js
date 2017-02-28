@@ -30,7 +30,7 @@ module.exports = {
   apiSpotifyYoutube: function (req, res, next) {
     let result = getSpotify(req.params.song, function (data) {
       if (!data) {
-        res.send('not found')
+        res.send('NOT FOUND')
       } else {
         var keyoutube = data.album.artists[0].name + '-' + data.name
         console.log(`=============================================${keyoutube}`)

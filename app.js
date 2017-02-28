@@ -2,16 +2,20 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path')
 const app = express()
 
 let index = require('./routes/index')
-// let api_party = require('./routes/api_party')
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'))
+app.engine('html', require('ejs').renderFile)
+app.set('view engine', 'html')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/api', index)
-// app.use('/api/api-party', api_party)
 
 app.listen(3000)
 
