@@ -51,20 +51,8 @@ module.exports = {
       bot.sendMessage(chatId, message)
     })
 
-    bot.onText(/\/location (.+)/, (msg, match) => {
-      const chatId = msg.chat.id
-      const resp = match[1]
-      console.log(resp)
-      let message = `https:// www.airbnb.co.id/s/${resp}?page=1&s_tag=OcTV_qGZ&allow_override%5B%5D=`
-      bot.sendMessage(chatId, message)
-    })
-
     bot.onText(/\/test/, function (message) {
       bot.sendMessage(message.chat.id, `Test dari ${message.from.first_name} ${message.from.last_name} diterima`)
-    })
-
-    bot.onText(/\/undangan/, function (message) {
-      bot.sendPhoto(message.chat.id, './photo/invitation.jpg', {caption: ''})
     })
   }
 }
