@@ -23,7 +23,7 @@ router.post('/tweet', function(req, res, next) {
        if (e) console.error(e);
        console.log(require('util').inspect(data));
       //  done();
-      res.send(data)
+      res.send(JSON.parse(data))
      });
 });
 
@@ -51,8 +51,9 @@ router.post('/meetup', function(req, res, next) {
 // };
 //
 // router.get('/page', function(req, res, next) {
-//   authUrl.search(searchOptions, function(err, res) {
-//     res.send(res); // {data: [{id: xxx, from: ...}, {id: xxx, from: ...}]}
+//   authUrl.search(searchOptions, function(err, data) {
+//     console.log(err);
+//     res.send(data); // {data: [{id: xxx, from: ...}, {id: xxx, from: ...}]}
 //   });
 // });
 
