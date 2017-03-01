@@ -1,0 +1,19 @@
+{
+  "name": "api-party",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "billboard-top-100": "^2.0.6",
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "oauth": "^0.9.15",
+    "serve-favicon": "~2.3.2"
+  }
+}
