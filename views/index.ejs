@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><%= title %></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <h2>Cuaca untuk Kota <%= data.weather[0].location.name %></h2>
+
+      <div class="center-midle">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-3">
+              <p><b>Cuaca hari ini:</b> <%= data.weather[0].current.day %>, <%= data.weather[0].current.date %></p>
+              <p><b>latitude:</b> <%= data.weather[0].location.lat %> </p>
+              <p><b>longitude:</b> <%= data.weather[0].location.long %> </p>
+              <p><b>cuaca:</b> <%= data.weather[0].current.skytext %></p>
+              <p><b>temperatur:</b> <%= data.weather[0].current.temperature %> C</p>
+              <p><b>kecepatan angin:</b> <%= data.weather[0].current.winddisplay %></p>
+            </div>
+
+            <!-- <div class="col-md-3">
+              <p><b>Ramalan cuaca untuk hari:</b></p>
+              <p><%= data.weather[0].forecast[0].day %>, <%= data.weather[0].current.date %></p>
+              <p>latitude: <%= data.weather[0].location.lat %> </p>
+              <p>longitude: <%= data.weather[0].location.long %> </p>
+              <p>cuaca: <%= data.weather[0].current.skytext %></p>
+              <p>temperatur: <%= data.weather[0].current.temperature %> C</p>
+              <p>kecepatan angin: <%= data.weather[0].current.winddisplay %></p>
+            </div>
+
+            <div class="col-md-3">
+              <p><%= data.weather[0].current.day %>, <%= data.weather[0].current.date %></p>
+              <p>latitude: <%= data.weather[0].location.lat %> </p>
+              <p>longitude: <%= data.weather[0].location.long %> </p>
+              <p>cuaca: <%= data.weather[0].current.skytext %></p>
+              <p>temperatur: <%= data.weather[0].current.temperature %> C</p>
+              <p>kecepatan angin: <%= data.weather[0].current.winddisplay %></p>
+            </div>
+            <div class="col-md-3">
+
+              <p><%= data.weather[0].current.day %>, <%= data.weather[0].current.date %></p>
+              <p>latitude: <%= data.weather[0].location.lat %> </p>
+              <p>longitude: <%= data.weather[0].location.long %> </p>
+              <p>cuaca: <%= data.weather[0].current.skytext %></p>
+              <p>temperatur: <%= data.weather[0].current.temperature %> C</p>
+              <p>kecepatan angin: <%= data.weather[0].current.winddisplay %></p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+        <h2>News:</h2>
+        <p><a href="<%= data.news[1] %>" target="_blank"><%= data.news[0] %></a></p>
+        <p><a href="<%= data.news[3] %>" target="_blank"><%= data.news[2] %></a></p>
+        <p><a href="<%= data.news[5] %>" target="_blank"><%= data.news[4] %></a></p>
+        <p><a href="<%= data.news[7] %>" target="_blank"><%= data.news[6] %></a></p>
+        <p><a href="<%= data.news[9] %>" target="_blank"><%= data.news[8] %></a></p>
+        <p><a href="<%= data.news[11] %>" target="_blank"><%= data.news[10] %></a></p>
+        <p><a href="<%= data.news[13] %>" target="_blank"><%= data.news[12] %></a></p>
+        <p><a href="<%= data.news[15] %>" target="_blank"><%= data.news[14] %></a></p>
+        <p><a href="<%= data.news[17] %>" target="_blank"><%= data.news[16] %></a></p>
+        <p><a href="<%= data.news[19] %>" target="_blank"><%= data.news[18] %></a></p>
+
+
+
+  </body>
+
+  <footer class="footer" style="text-align: center">
+    <a href="#" target="_blank">&copy weathernews.com</a></p>
+  </footer>
+</html>
