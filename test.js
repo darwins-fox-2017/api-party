@@ -18,9 +18,15 @@ var check = [
 var test = new LYQL(options, function(data){
   for(let i=0; i<check.length; i++) {
     if(data[check[i].stocks]) {
-      if(data[check[i].stocks])
+      if(data[check[i].stocks].l84 === check[i].price) {
+        api.sendMessage({ chat_id: 130776262, text: `${check[i].stocks} Breakout price` }, function (err, message) {
+          if (err) throw err;
+          console.log(message);
+        });
+      }
     }
   }
+  console.log(data);
   // console.log(data);
   // brms = data['BRMS.JK']
   // console.log(test.l84);
